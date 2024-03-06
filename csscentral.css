@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Mukta:wght@300&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Mukta:wght@300&family=Noto+Sans+KR:wght@300&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Mukta:wght@300&family=Mulish&family=Noto+Sans+KR:wght@300&family=Playfair+Display:wght@700&display=swap');
+html  { 
+    scroll-behavior: smooth; 
+}
+:target { 
+    scroll-margin-top: 30px;         
+} 
+html, body {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    text-align: justify;
+    min-height: 100vh;       
+}
+body{
+    background-color: white;
+}
+
+body, header, nav, section, article, aside, footer, 
+div, ul, figure, h1, h2, h3 {
+    display: block; 
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+}
+figure img, figure iframe {
+    width: 100%;
+    height: auto;
+}
+h1 {
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2rgb(0, 0, 0)fff,
+}
+h2 {
+    font-family: 'Playfair Display', serif;
+    padding-bottom: 20px;
+    text-align: justify;
+    border-bottom: 1px solid black;
+
+}
+header {
+    font-family: 'Playfair Display', serif;
+    padding: 100px 3%;
+    background-image: url(./imagens/guiaturistico.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 15%;
+}
+main#container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+article {
+    padding: 0 3% 30px 3%;
+}
+p{
+    font-family: 'Heebo', sans-serif;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+}
+nav#menu {
+    background-color: #ff4800;
+    position: sticky; 
+    top: 0;
+    z-index: 9;
+}    
+nav#menu span.menu_icon {    
+   display: block;
+   height: 50px;
+   background-image: url(./imagens/burger.png);
+   background-repeat: no-repeat;
+   background-size: 50px 50px;
+   background-position: center;
+   background-color: #e2754a;
+   cursor: pointer;  
+}
+nav#menu ul {                       
+   list-style: none;
+   display: none;
+}
+nav#menu:hover ul,
+nav#menu:focus ul,
+nav#menu:active ul {
+   display: block;
+} 
+nav#menu li a {
+    display: block;
+    text-decoration: none;  
+    color: #fff; 
+    font-weight: 600;
+	padding: 14px;
+}
+nav#menu li:hover, nav li:focus, nav li:active {
+    background-color: #812500;
+    transition: background 0.5s;
+}
+nav#menu a:hover{
+    color: #ffffff;
+    transition: color 0.5s;
+}
+main#container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+section.wrapper {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); /* Três linhas com altura igual */
+    grid-gap: 30px; /* Espaço entre as linhas */
+}
+
+.imagem-texto {
+    text-align: center;
+}
+
+.imagem-texto img {
+    width: 30%;
+    height: auto;
+    border-radius: 8px; /* Opcional: Adiciona bordas arredondadas às imagens */
+}
+
+.imagem-texto p {
+    font-family: 'Heebo', sans-serif;
+}
+@media screen and (max-width: 800px){
+    div#fotos figure {
+		max-width: 70%;    
+		margin: 0 auto;     
+    }  
+}   
+@media screen and (min-width: 800px){
+    div#fotos {
+        flex-direction: row;   
+        align-content: center;
+    }
+}
+@media screen and (min-width: 700px) { 	
+    nav#menu span.menu_icon {  
+        display: none;         
+    }       
+    nav#menu ul,
+    nav#menu:hover ul,
+    nav#menu:focus ul,
+    nav#menu:active ul {
+        display: flex;          
+        justify-content: center;    
+    }  
+}
+@media screen and (min-width: 1200px){
+    main#container {         
+        display: flex;
+    }
+	div#fotos figure {
+		flex-basis: 33%;      
+	}
+    aside  {
+        width: 30%;
+        padding-top: 15px;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    aside div {        
+        flex-direction: column;     
+    }
+}
+@media screen and (max-width: 800px) {
+    section.wrapper {
+        grid-template-columns: 1fr; /* Muda para uma coluna automática em telas menores */
+    }
+}
+
+
+/* Adicione a regra abaixo para esconder a sub-lista por padrão */
+nav#menu .sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #ff4800;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Modifique a regra para exibir a sub-lista apenas quando o cursor estiver sobre o item "Países" */
+nav#menu li:hover #paises-submenu {
+    display: block;
+}
+
+nav#menu .sub-menu li {
+    display: block;
+    text-align: center;
+}
+
+nav#menu .sub-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav#menu .sub-menu a:hover {
+    background-color: #812500;
+}
